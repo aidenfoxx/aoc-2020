@@ -1,5 +1,4 @@
 /**
- * Let's play golf!
  * NOTE: Only works with unix line endings.
  * (?:
  *   (?:cid:.+[\s\n]|)byr:(?:19[2-9]\d|200[0-2])[\s\n]|
