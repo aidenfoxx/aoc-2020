@@ -1,6 +1,7 @@
-const data = require('fs').readFileSync('data.txt', 'utf8').trim().split('\n');
-const buses = data[1].split(',').map((id, offset) => id !== 'x' ? [Number(id), offset] : null).filter(Boolean).sort((a, b) => b[0] - a[0]);
-let index = 1054358952568; // NOTE: Specific to my data
+const data = require('fs').readFileSync('data.txt', 'utf8').trim().split('\n')[1].split(',');
+const buses = data.map((id, offset) => id !== 'x' ? [Number(id), offset] : null).filter(Boolean).sort((a, b) => b[0] - a[0]);
+const offset = Number(data[0]);
+let index = 1054358952569; // NOTE: Specific to my data
 
 /**
  * Should be solved with chinese remainder
@@ -14,4 +15,4 @@ do {
     console.log('First valid time:', comparisonTime);
     break;
   }
-} while (++index);
+} while (index += offset);
