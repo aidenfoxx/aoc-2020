@@ -1,5 +1,5 @@
 let currentDirection = 'E';
-let currentPosition = { N: 0, E: 0, S: 0, W: 0 };
+const currentPosition = { N: 0, E: 0, S: 0, W: 0 };
 
 require('fs').readFileSync('data.txt', 'utf8').trim().split('\n').forEach((data) => {
   let [, direction, distance] = data.match(/([FLRNESW])(\d+)/) || [];

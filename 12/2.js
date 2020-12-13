@@ -1,6 +1,5 @@
-let currentDirection = 'E';
-let currentPosition = { N: 0, E: 0, S: 0, W: 0 };
-let currentWaypoint = { N: 1, E: 10, S: 0, W: 0 };
+const currentPosition = { N: 0, E: 0, S: 0, W: 0 };
+const currentWaypoint = { N: 1, E: 10, S: 0, W: 0 };
 
 const rotateWaypoint = (counterClockwise) => {
   let prevWaypoint = { ...currentWaypoint };
@@ -12,7 +11,7 @@ const rotateWaypoint = (counterClockwise) => {
 };
 
 require('fs').readFileSync('data.txt', 'utf8').trim().split('\n').forEach((data) => {
-  let [, direction, distance] = data.match(/([FLRNESW])(\d+)/) || [];
+  const [, direction, distance] = data.match(/([FLRNESW])(\d+)/) || [];
 
   if (direction === 'L' || direction === 'R') {
     let rotations = distance / 90;
